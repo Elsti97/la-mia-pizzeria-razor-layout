@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Exercises";
     // 1
     var name = "Elsti";
     var surname = "Shehati";
@@ -13,7 +13,13 @@
 
 
     // 4
-    
+    var randoms = new List<int>();
+    var r = new Random();
+
+    for (int i = 0; i < 20; i++)
+    {
+        randoms.Add(r.Next(1, 91));
+    }
 }
 
 @functions {
@@ -44,5 +50,11 @@
 
 
 <div class="text-center mt-5">
-    <h4>4) </h4>
+    <h4>4) Numeri compresi tra 20 e 70:</h4>
+    <h5>
+        @foreach (var number in randoms.Where(n => n >= 20 && n <= 90))
+        {
+            <span>@number</span>
+        }
+    </h5>    
 </div>
