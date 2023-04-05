@@ -32,7 +32,15 @@
 
 
     // 5
-    string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    DateTime today = DateTime.Now;
+    string currentTime = today.ToString("yyyy-MM-dd HH:mm:ss");
+
+
+    // 6
+    DateTime lastWeek = today.AddDays(-7);
+    string todayDay = today.ToString("dddd");
+    DateTime nextYear = today.AddYears(1);
+    string nextYearDay = nextYear.ToString("dddd");
 }
 
 
@@ -56,7 +64,7 @@
 <div class="text-center mt-5">
     <h4>4) Numeri compresi tra 20 e 70:</h4>
     <h5>
-        @foreach (var number in randoms.Where(n => n >= 20 && n <= 90))
+        @foreach (var number in randoms.Where(n => n >= 20 && n <= 70))
         {
             <span>@number</span>
         }
@@ -65,4 +73,11 @@
 
 <div class="text-center mt-5">
     <h4>5) La data e l'ora corrente sono: @currentTime</h4>
+</div>
+
+<div class="text-center mt-5">
+    <h4>6) Data di oggi: @today</h4>
+    <h4>Data di settimana scorsa: @lastWeek</h4>
+    <h4>Il giorno della settimana di oggi è: @todayDay</h4>
+    <h4>Tra un anno invece sarà: @nextYearDay</h4>
 </div>
