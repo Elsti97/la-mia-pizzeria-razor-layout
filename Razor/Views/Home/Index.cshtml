@@ -6,6 +6,15 @@
 
     // 2
     var n = 10;
+    int Sum(int n)
+    {
+        int sum = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            sum += i;
+        }
+        return sum;
+    }
 
     // 3
     var phrase = "nel mezzo del cammin di nostra vita";
@@ -20,19 +29,14 @@
     {
         randoms.Add(r.Next(1, 91));
     }
+
+
+    // 5
+    string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 }
 
-@functions {
-    int Sum(int n)
-    {
-        int sum = 0;
-        for (int i = 1; i <= n; i++)
-        {
-            sum += i;
-        }
-        return sum;
-    }
-}
+
+
 
 <div class="text-center">
     <h1 class="display-4 mb-2">Welcome back</h1>
@@ -57,4 +61,8 @@
             <span>@number</span>
         }
     </h5>    
+</div>
+
+<div class="text-center mt-5">
+    <h4>5) La data e l'ora corrente sono: @currentTime</h4>
 </div>
